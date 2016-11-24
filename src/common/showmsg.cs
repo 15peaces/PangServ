@@ -9,9 +9,9 @@
  ***********************************************/
 using System;
 
-namespace console
+namespace showmsg
 {
-    class showmsg
+    class console
     {
         // Specifies how silent the console is.
         static short msg_silent = 0;
@@ -47,7 +47,7 @@ namespace console
         {
             if (message == "")
             {
-                showmsg.error("Empty string passed to _vShowMessage()");
+                console.error("Empty string passed to _vShowMessage()");
                 return false;
             }
 
@@ -83,12 +83,24 @@ namespace console
                     prefix = "[Notice]";
                     color = e_color.CL_WHITE;
                     break;
+                case e_msg_type.MSG_WARNING: // Bright Yellow
+                    prefix = "[Warning]";
+                    color = e_color.CL_YELLOW;
+                    break;
+                case e_msg_type.MSG_DEBUG: // Bright Cyan, important stuff!
+                    prefix = "[Debug]";
+                    color = e_color.CL_CYAN;
+                    break;
                 case e_msg_type.MSG_ERROR: // Bright Red  (Regular errors)
                     prefix = "[Error]";
                     color = e_color.CL_RED;
                     break;
+                case e_msg_type.MSG_FATALERROR: // Bright Red (Fatal errors, abort(); If possible)
+                    prefix = "[Fatal Error]";
+                    color = e_color.CL_RED;
+                    break;
                 default:
-                    showmsg.error("In function _vShowMessage() -> Invalid flag passed.");
+                    console.error(String.Format("In function _vShowMessage() -> Invalid flag ({0}) passed.", flag));
                     return false;
             }
 
@@ -137,9 +149,24 @@ namespace console
             return _vShowMessage(e_msg_type.MSG_NOTICE, message);
         }
 
+        public static bool warning(string message)
+        {
+            return _vShowMessage(e_msg_type.MSG_WARNING, message);
+        }
+
+        public static bool debug(string message)
+        {
+            return _vShowMessage(e_msg_type.MSG_DEBUG, message);
+        }
+
         public static bool error(string message)
         {
             return _vShowMessage(e_msg_type.MSG_ERROR, message);
+        }
+
+        public static bool fatalerror(string message)
+        {
+            return _vShowMessage(e_msg_type.MSG_FATALERROR, message);
         }
     }
 }
