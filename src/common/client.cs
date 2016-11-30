@@ -6,11 +6,3 @@
  ***********************************************
  * Client Packets and Interface.
  ***********************************************/
-
-namespace client
-{
-    class sClientPacket
-    {
-
-    }
-}

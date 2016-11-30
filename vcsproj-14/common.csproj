@@ -43,9 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\src\main.cs" />
-    <Compile Include="PangServ\PangServ\Properties\AssemblyInfo.cs" />
-	<Compile Include="..\src\common\client.cs" />
+<Compile Include="PangServ\PangServ\Properties\AssemblyInfo.cs" />
+    <Compile Include="..\src\common\main.cs" />
+    <Compile Include="..\src\common\buffer.cs" />
+    <Compile Include="..\src\common\client.cs" />
     <Compile Include="..\src\common\showmsg.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -7,7 +7,7 @@
  * Complete Message-Handling using win-api.
  * Copyright © 15peaces 2012 - 2016
  ***********************************************/
-using System;
+using System; // Console
 
 namespace showmsg
 {
