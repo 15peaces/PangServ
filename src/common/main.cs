@@ -8,7 +8,7 @@
  * so there is no bat needed.
  ***********************************************/
 using showmsg; // class console.
-using buffering;
+using client;
 
 namespace main {
     class CMain {

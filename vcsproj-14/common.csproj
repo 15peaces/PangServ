@@ -47,6 +47,8 @@
     <Compile Include="..\src\common\main.cs" />
     <Compile Include="..\src\common\buffer.cs" />
     <Compile Include="..\src\common\client.cs" />
+    <Compile Include="..\src\common\cryptlib.cs" />
+    <Compile Include="..\src\common\defs.cs" />
     <Compile Include="..\src\common\showmsg.cs" />
   </ItemGroup>
   <ItemGroup>
