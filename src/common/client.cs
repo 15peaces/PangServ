@@ -1,7 +1,7 @@
 /***********************************************
  *
  *   PangServ - Pangya Server Emulator       
- *   Copyright © 2016 PangServ-Team
+ *   Copyright © 2016 - 2017 PangServ-Team
  *
  ***********************************************
  * Client Packets and Interface.
@@ -14,22 +14,32 @@ using CryptLib;
 using defs;
 using showmsg;
 
-namespace client
+namespace Client
 {
-    class ClientPacket:membuffer // Client Packets
+    class ClientPacket // Client Packets
     {
+
+        membuffer buf;
+
+        public ClientPacket(string buffer)
+        {
+            buf = new membuffer();
+            buf.WriteStr(buffer);
+            buf.Seek(0, System.IO.SeekOrigin.Begin);
+        }
+
         public string ToStr()
         {
             long previousOffset;
             long size;
             string result;
 
-            previousOffset = Seek(0, System.IO.SeekOrigin.Current);
-            Seek(0, System.IO.SeekOrigin.Begin);
-            size = GetSize();
+            previousOffset = buf.Seek(0, System.IO.SeekOrigin.Current);
+            buf.Seek(0, System.IO.SeekOrigin.Begin);
+            size = buf.GetSize();
 
-            result = ReadStr(size);
-            Seek((uint)previousOffset, System.IO.SeekOrigin.Begin);
+            result = buf.ReadStr(size);
+            buf.Seek((uint)previousOffset, System.IO.SeekOrigin.Begin);
 
             return result;
         }
@@ -40,11 +50,11 @@ namespace client
             long size;
             string result;
 
-            previousOffset = Seek(0, System.IO.SeekOrigin.Current);
-            size = GetSize() - previousOffset;
+            previousOffset = buf.Seek(0, System.IO.SeekOrigin.Current);
+            size = buf.GetSize() - previousOffset;
 
-            result = ReadStr(size);
-            Seek((uint)previousOffset, System.IO.SeekOrigin.Begin);
+            result = buf.ReadStr(size);
+            buf.Seek((uint)previousOffset, System.IO.SeekOrigin.Begin);
 
             return result;
         }

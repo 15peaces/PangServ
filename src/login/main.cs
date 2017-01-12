@@ -2,28 +2,27 @@
  *
  *   PangServ - Pangya Server Emulator       
  *   Copyright © 2016 PangServ-Team
+ *   ---------------------------------
+ *             Login Server
  *
  ***********************************************
  * Common code.
  ***********************************************/
 using showmsg; // class console.
-using Logging;
 
-namespace CommonMain
+namespace LoginMain
 {
-    class CMain
+    class LMain
     {
         static void Main()
         {
-            cLogging commonlog = new cLogging("common.log");
-            commonlog.write("Common Service started.");
             console.message("===============================================");
             console.message("||                                           ||");
             console.message("||   PangServ - Pangya Server Emulator       ||");
             console.message("||   Copyright <c> 2016 PangServ-Team        ||");
-            console.message("||                                           ||");
+            console.message("||   ---------------------------------       ||");
+            console.message("||             Login Server                  ||");
             console.message("===============================================");
-            commonlog.write("Common Service stopped.");
-        }  
+        }
     }
 }

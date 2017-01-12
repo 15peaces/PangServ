@@ -1,7 +1,7 @@
 /***********************************************
  *
  *   PangServ - Pangya Server Emulator       
- *   Copyright © 2016 PangServ-Team
+ *   Copyright © 2016 - 2017 PangServ-Team
  *
  ***********************************************
  * Buffer

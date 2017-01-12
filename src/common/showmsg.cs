@@ -11,7 +11,7 @@ using System; // Console
 
 namespace showmsg
 {
-    class console
+    public class console
     {
         // Specifies how silent the console is.
         static short msg_silent = 0;
