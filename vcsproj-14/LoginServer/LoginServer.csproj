@@ -49,9 +49,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\common.csproj">
       <Project>{9650d91d-c10d-42ec-9a09-837bfe4eb8b4}</Project>
       <Name>common</Name>
