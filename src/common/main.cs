@@ -8,6 +8,7 @@
  ***********************************************/
 using showmsg; // class console.
 using Logging;
+using sync;
 
 namespace CommonMain
 {
@@ -23,6 +24,8 @@ namespace CommonMain
             console.message("||   Copyright <c> 2016 PangServ-Team        ||");
             console.message("||                                           ||");
             console.message("===============================================");
+            cSyncClient Syncserver = new cSyncClient(commonlog);
+            Syncserver.StartListening();
             commonlog.write("Common Service stopped.");
         }  
     }
