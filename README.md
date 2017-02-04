@@ -15,3 +15,5 @@ License
 Software licensed under the GPL version 3 available in LICENSE and online on https://www.gnu.org/licenses/gpl-3.0.txt.
 
 Use parts from other developers, sometimes with small changes, references on autorship and specific licenses are on individual source files.
+
+This is a remake of hsreina's delphi project (Copyright (C) 2015 Shad'o Soft tm): https://github.com/hsreina/pangya-server
