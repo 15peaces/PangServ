@@ -19,7 +19,7 @@ namespace Client
     class ClientPacket // Client Packets
     {
 
-        membuffer buf;
+        public membuffer buf;
 
         public ClientPacket(string buffer)
         {

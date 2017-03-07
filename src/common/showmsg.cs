@@ -5,7 +5,7 @@
  *
  ***********************************************
  * Complete Message-Handling using win-api.
- * Copyright © 15peaces 2012 - 2016
+ * Copyright © 15peaces 2012 - 2017
  ***********************************************/
 using System; // Console
 
@@ -100,23 +100,23 @@ namespace showmsg
                     color = e_color.CL_RED;
                     break;
                 default:
-                    console.error(String.Format("In function _vShowMessage() -> Invalid flag ({0}) passed.", flag));
+                    error(String.Format("In function _vShowMessage() -> Invalid flag ({0}) passed.", flag));
                     return false;
             }
 
-            Console.ForegroundColor = (System.ConsoleColor)e_color.CL_GREY;
+            Console.ForegroundColor = (ConsoleColor)e_color.CL_GREY;
             char[] letters = prefix.ToCharArray();
-            foreach (Char c in letters)
+            foreach (char c in letters)
             {
-                Console.ForegroundColor = (System.ConsoleColor)color;
+                Console.ForegroundColor = (ConsoleColor)color;
                 Console.Write(c);
             }
-            Console.ForegroundColor = (System.ConsoleColor)e_color.CL_GREY;
+            Console.ForegroundColor = (ConsoleColor)e_color.CL_GREY;
             if (prefix != "")
                 Console.Write(" ");
 
             letters = message.ToCharArray();
-            foreach (Char c in letters)
+            foreach (char c in letters)
                 Console.Write(c);
 
             Console.WriteLine();
@@ -124,6 +124,11 @@ namespace showmsg
             return true;
         }
  
+        public static bool unformated(byte type, string message)
+        {
+            return _vShowMessage((e_msg_type)type, message);
+        }
+
         public static bool message(string message)
         {
             return _vShowMessage(e_msg_type.MSG_NONE, message);

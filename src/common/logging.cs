@@ -1,12 +1,13 @@
 /***********************************************
  *
  *   PangServ - Pangya Server Emulator       
- *   Copyright © 2016 PangServ-Team
+ *   Copyright © 2016 - 2017 PangServ-Team
  *
  ***********************************************
  * Logging.
  ***********************************************/
 using System;
+using showmsg;
 
 namespace Logging
 {
@@ -32,11 +33,13 @@ namespace Logging
             _file = string.Format("{0}log\\{1}", AppDomain.CurrentDomain.BaseDirectory, filename);
         }
 
-        public void write(string msg, e_LogType logType = e_LogType.LMSG_NORMAL)
+        public void write(string msg, e_LogType logType = e_LogType.LMSG_NORMAL, bool silent = true)
         {
             using(System.IO.StreamWriter w = System.IO.File.AppendText(_file))
             {
                 w.WriteLine("{0} {1} [{2}] : {3}", DateTime.Now.ToLongDateString(), DateTime.Now.ToLongTimeString(), logType.ToString(), msg);
+                if (!silent)
+                    console.unformated((byte)logType, msg);
             }
         }
     }

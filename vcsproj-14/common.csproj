@@ -47,9 +47,13 @@
     <Compile Include="..\src\common\main.cs" />
     <Compile Include="..\src\common\buffer.cs" />
     <Compile Include="..\src\common\client.cs" />
+    <Compile Include="..\src\common\config.cs" />
     <Compile Include="..\src\common\cryptlib.cs" />
     <Compile Include="..\src\common\defs.cs" />
+    <Compile Include="..\src\common\inilib.cs" />
     <Compile Include="..\src\common\logging.cs" />
+    <Compile Include="..\src\common\sclient.cs" />
+    <Compile Include="..\src\common\server.cs" />
     <Compile Include="..\src\common\showmsg.cs" />
     <Compile Include="..\src\common\sync.cs" />
   </ItemGroup>
