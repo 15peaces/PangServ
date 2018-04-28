@@ -1,6 +1,8 @@
 # PangServ
 PangServ is a Pangya Server Emulator project. However, it is currently in an unusable state. If you want to help, feel free to create pull requests and help us out. Also, any info that helps might be welcome here. 
 
+Facebook Page: https://www.facebook.com/PangServ/
+
 Donations
 ---------
 
